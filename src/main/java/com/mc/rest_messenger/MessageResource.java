@@ -24,19 +24,21 @@ public class MessageResource {
 //    } 
     
     MessageService  messageService = new MessageService();
-    
-    
-        @GET
+      
+    @GET
+    @Path("/xml")
     @Produces(MediaType.APPLICATION_XML)
-    public List<Message> getMessages(){
+    public List<Message> getMessagesXML(){
         return messageService.getAllMessages();       
     } 
     
-//    @GET
-//    @Produces(MediaType.APPLICATION_XML)
-//    public List<Message> getMessagesXML(){
-//        return messageService.getAllMessages();        
-//    } 
+     @GET
+     @Path("/json")
+    @Produces(MediaType.APPLICATION_JSON)
+    public List<Message> getMessages_JSON(){
+        return messageService.getAllMessages();       
+    } 
+    
     
     
 }

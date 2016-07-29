@@ -14,7 +14,7 @@ import javax.xml.bind.annotation.XmlRootElement;
  */
 @XmlRootElement
 public class Message {
-    private int id;
+    private long id;
     private Date created;
     private String message;
     private String user;
@@ -22,21 +22,18 @@ public class Message {
     public Message() {
     }
 
-    public Message(int id, String message, String user) {
+    public Message(long id, String message, String user) {
         this.id = id;
         this.message = message;
         this.created = new Date();
         this.user = user;
     }
-    
-    
-    
 
-    public int getId() {
+    public long getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(long id) {
         this.id = id;
     }
 
