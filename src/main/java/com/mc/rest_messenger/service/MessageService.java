@@ -44,7 +44,11 @@ public class MessageService {
     }
     
     //Retrieving specific message by its id
-    public Message getMessage(Message message){
+    public Message getMessage(long id){
+        return messagesDatabase.get(id);
+    }
+    
+    public Message addMessage(Message message){
         message.setId(messagesDatabase.size() + 1);
         messagesDatabase.put(message.getId(),message);
         return message;        

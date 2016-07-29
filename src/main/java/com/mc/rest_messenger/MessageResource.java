@@ -32,12 +32,20 @@ public class MessageResource {
         return messageService.getAllMessages();       
     } 
     
-     @GET
-     @Path("/json")
+    @GET
+    @Path("/json")
     @Produces(MediaType.APPLICATION_JSON)
     public List<Message> getMessages_JSON(){
         return messageService.getAllMessages();       
     } 
+    
+    
+    @GET
+    @Path("/{messageId}")
+    @Produces(MediaType.APPLICATION_XML)
+    public Message getMessagesById(@PathParam("messageId") long id){
+        return messageService.getMessage(id);       
+    }
     
     
     
