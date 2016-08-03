@@ -16,7 +16,7 @@ import javax.ws.rs.core.MediaType;
  * @author Administrator
  */
 @Path("messages")
-    @Produces(MediaType.APPLICATION_JSON)
+@Produces(MediaType.APPLICATION_JSON)
     @Consumes(MediaType.APPLICATION_JSON)
 public class MessageResource {
 //    @GET
@@ -66,15 +66,15 @@ public class MessageResource {
     
     @GET
     @Path("/json/{messageId}")
-    @Produces(MediaType.APPLICATION_JSON)
+  //  @Produces(MediaType.APPLICATION_JSON)
     public Message getMessagesById_JSON(@PathParam("messageId") long id){
         return messageService.getMessage(id);       
     }
     
     
     @POST   //for insert 
-    @Produces(MediaType.APPLICATION_JSON)
-    @Consumes(MediaType.APPLICATION_JSON)
+//    @Produces(MediaType.APPLICATION_JSON)
+//    @Consumes(MediaType.APPLICATION_JSON)
     public Message addMessageByID(Message message){
        return  messageService.addMessage(message);
     }
@@ -82,14 +82,14 @@ public class MessageResource {
     
      @DELETE
      @Path("/{messageId}")
-     @Produces(MediaType.APPLICATION_JSON)
+  //   @Produces(MediaType.APPLICATION_JSON)
     public Message deleteMessageByID(@PathParam("messageId") long id){
        return  messageService.removeMessage(id);
     }
     
     @PUT
-    @Produces(MediaType.APPLICATION_JSON)
-    @Consumes(MediaType.APPLICATION_JSON)
+  //  @Produces(MediaType.APPLICATION_JSON)
+  //  @Consumes(MediaType.APPLICATION_JSON)
     public Message updateMessageByID( Message message){
        return  messageService.updateMessage(message);
     }
